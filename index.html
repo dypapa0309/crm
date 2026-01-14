@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sales CRM</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-title">Sales CRM</div>
+      <div class="brand-sub">파이프라인 · 고객 · 리포트 · 보고</div>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-link" href="#/dashboard" data-route="dashboard">대시보드</a>
+      <a class="nav-link" href="#/pipeline" data-route="pipeline">파이프라인</a>
+      <a class="nav-link" href="#/companies" data-route="companies">고객</a>
+      <a class="nav-link" href="#/reports" data-route="reports">보고서</a>
+      <a class="nav-link" href="#/deals" data-route="deals">딜 목록</a>
+    </nav>
+
+    <div class="actions">
+      <input id="globalSearch" class="input" placeholder="전체 검색 (딜/회사)" />
+      <button id="btnNewDeal" class="btn">+ 새 딜</button>
+      <button id="btnRefresh" class="btn btn-outline">새로고침</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="view" class="view"></section>
+
+    <!-- 공용 사이드 패널(딜 상세) -->
+    <aside id="dealPanel" class="panel hidden"></aside>
+
+    <!-- 공용 모달 -->
+    <div id="modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close="1"></div>
+      <div class="modal-card">
+        <div class="modal-head">
+          <div id="modalTitle" class="modal-title">-</div>
+          <button class="icon-btn" data-close="1" aria-label="닫기">✕</button>
+        </div>
+        <div id="modalBody" class="modal-body"></div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
